@@ -64,6 +64,8 @@ The execution specialist. Takes individual task specifications and transforms th
 | | `/ask_advice` | Escalate blockers or ambiguities | Current task file + problem context |
 | | `/report_to_lead` | Report task completion status | Completed task file |
 | | `/split_to_helper` | Delegate sub-task to helper agent | Current task + sub-task definition |
+| **All Agents** | | | |
+| | `/thread_dump` | Generate context handoff for new agent instance | Current session state |
 
 ---
 
@@ -197,10 +199,32 @@ Each phase has mandatory verification before proceeding:
 
 ---
 
-## Future Enhancements
+## Context Management
 
-### Thread Dump (Coming Soon)
-*Placeholder for thread dump functionality to handle long conversation contexts*
+### Thread Dump Protocol
+
+When a chat session's context window approaches capacity or becomes degraded, use `/thread_dump` to create a comprehensive handoff briefing. This protocol:
+
+- **Captures complete session state**: Agent role, current command, workflow phase, and exact interruption point
+- **Documents all work completed**: Files created/modified, decisions made, accomplishments
+- **Preserves critical context**: Task status, dependencies, constraints, and immediate next steps
+- **Provides continuation instructions**: Exact files to attach and steps to resume work
+
+**When to use:**
+- Chat becomes slow or repetitive
+- Agent loses track of previous decisions
+- You need to switch models/agents mid-task
+- Session exceeds ~50k tokens (if you can estimate)
+
+**How it works:**
+1. Run `/thread_dump` in current session
+2. Agent outputs a structured briefing directly in chat
+3. Copy the entire briefing
+4. Start fresh session with specified agent/model
+5. Paste briefing as first message
+6. New agent acknowledges and continues from exact interruption point
+
+The receiving agent will have complete context to continue seamlessly as if no handoff occurred.
 
 ### Constitution Enrichment
 The `/enrich_constitution` prompt transforms the minimal CONSTITUTION.md into a comprehensive project charter including:

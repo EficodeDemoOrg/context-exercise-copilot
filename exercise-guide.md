@@ -1,4 +1,4 @@
-# ## Introduction
+# Introduction
 
 This guide walks you through building the Context Window Visualizer project using the multi-agent development workflow. You'll direct specialized AI agents through different phases, from project initialization to implementing your first epic.
 
@@ -255,8 +255,9 @@ The Implementer generates a completion report with:
 ### Context window issues arise
 - Agent becomes repetitive or confused
 - Performance degrades
-- Use smaller task files
-- Start fresh chat sessions more frequently
+- **Use `/thread_dump`** to generate a handoff briefing
+- Copy the briefing and start a fresh session with it
+- Or use smaller task files and start fresh sessions more frequently
 
 ### The agent hallucinates or makes things up
 - Stop immediately
@@ -280,6 +281,7 @@ Remember: The agents are probabilistic and will sometimes need correction. Your 
 - **One agent, one task, one chat session** - Don't mix contexts
 - **Double-check chatmode and model** - Every time you switch threads, verify they're correct
 - **Use Claude Sonnet 4/4.5 for implementation** - It's superior for code generation and detailed planning
+- **Use `/thread_dump` when stuck** - If agent loses context or becomes confused, dump and restart fresh
 - **Read everything** - The agents generate detailed documentation for a reason
 - **Commit frequently** - After each successful task or epic
 - **Trust but verify** - Agents follow patterns but can make mistakes
