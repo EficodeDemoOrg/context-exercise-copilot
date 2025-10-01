@@ -13,29 +13,103 @@ To create a functional web application that provides a real-time, interactive si
 
 ## 2. The Development Path: An Integrated Web Application
 
-You will build a single-page web application that combines the context management engine with a real-time visualization.
+You will build a **ChatGPT-style interface** with an integrated context window monitor that makes context management visible and interactive.
 
-**Features:**
+### Core Interface Components:
 
-### Interactive UI:
-- Display the context window as a dynamic bar that fills up as content is added.
-- Use different colors within the bar to represent different types of context (e.g., system_prompt, file, history).
-- Show the current token count and the maximum limit in a text display (e.g., 45,000 / 128,000 tokens).
-- Provide UI controls (e.g., input fields for type and token count, and an "Add Context" button) to allow a user to add items to the context.
+#### Chat Interface
+A familiar conversation interface featuring:
+- **Message Display Area**: Shows conversation history with clear visual distinction between user and assistant messages
+- **Input Field**: Text area for typing messages at the bottom of the interface
+- **Send Button**: Triggers message submission
+- **Attachment Controls**: Buttons or drag-and-drop area for adding files, images, or pasting text blocks
+
+#### Context Monitor Panel
+A dedicated visualization area (sidebar or top panel) displaying:
+- **Visual Progress Bar**: Horizontal segmented bar showing context window usage
+  - Different colors represent different content types (system prompts, files, conversation, images)
+  - Bar fills proportionally as content is added
+  - Segments are sized according to their token usage
+- **Token Counter**: Real-time display (e.g., "45,231 / 128,000 tokens")
+- **Context Items List**: Expandable list showing all items currently in context with their individual token costs
+- **Performance Status Indicator**: Visual indicator showing current state (Optimal/Degraded/Critical)
+
+### User Interaction Flow:
+
+**Adding Content:**
+1. User types messages in chat → adds to "conversation" context type
+2. User attaches files via button or drag-and-drop → adds to "file" context type  
+3. User pastes images → adds to "image" context type
+4. User configures system prompts via settings → adds to "system" context type
+
+**Visual Feedback:**
+- Context bar fills in real-time as content is added
+- Each addition shows its token cost
+- Hover over bar segments to see item details (type, source, token count)
+- Smooth animations when items are added or removed
+
+**Example User Journey:**
+1. Start with empty chat and context window at 0 tokens
+2. Add system prompt: "You are a helpful assistant" → 500 tokens (Blue segment appears)
+3. Attach a markdown file → 2,000 tokens (Green segment grows)
+4. Type several messages back and forth → conversation history grows (Gray segments expand)
+5. Context reaches 60% → Status changes to "Degraded" with yellow indicator
+6. Continue adding content
+7. Context reaches 80% → Status becomes "Critical" with red alert
+8. Add more content → Automatic compaction triggers, oldest messages removed
+9. Notification appears: "Context compacted - removed 3 oldest messages (1,200 tokens)"
 
 ### State Management Logic:
-- The application must maintain the state of all items in the context window internally.
-- Implement the performance degradation logic, which is reflected visually:
-  - **optimal** (< 60% full): The bar should be green.
-  - **degraded** (60%-80% full): The bar turns yellow, and a warning indicator appears.
-  - **critical** (> 80% full): The bar turns red, and a compaction event is automatically triggered.
-- The compaction logic should remove the oldest history item from the application's state and log a message to the UI (e.g., "Context limit reached. Compacting history.").
+
+The application must maintain a clear internal state model:
+
+**Performance States:**
+- **Optimal** (< 60% full): Green indicator, normal operation
+- **Degraded** (60%-80% full): Yellow indicator with warning message
+- **Critical** (> 80% full): Red indicator, compaction triggers automatically when new content would exceed limit
+
+**Compaction Algorithm:**
+When context limit is reached, the system must:
+1. Identify oldest compressible items (conversation history)
+2. Remove them in chronological order (oldest first)
+3. Never remove system prompts or attached files
+4. Display notification with details of what was compacted
+5. Update context bar visualization immediately
 
 ## 3. Application State Model
 
 The application should be built around a clear internal state model representing the context window.
 
-This model should track the total tokens, max tokens, current status (optimal, degraded, critical), and a list of all context items. Each item in the list should have properties like type, token_count, and an optional source.
+### Context Item Structure:
+Each item in the context must track:
+```
+ContextItem:
+  - id: unique identifier
+  - type: one of [system, file, message, image]
+  - content: the actual text or data
+  - tokenCount: calculated token usage
+  - timestamp: when it was added
+  - source: optional (e.g., filename, "user", "assistant")
+  - compressible: boolean (can it be removed during compaction?)
+```
+
+### Application State:
+The application state must include:
+```
+ApplicationState:
+  - maxTokens: 128000
+  - currentTokens: sum of all item token counts
+  - status: one of [optimal, degraded, critical]
+  - contextItems: array of ContextItem
+  - chatMessages: array of chat history (user/assistant exchanges)
+  - compactionEvents: count of how many times compaction occurred
+```
+
+### Token Calculation:
+For MVP purposes, use simple approximation:
+- 1 token ≈ 4 characters
+- Display both character count and estimated tokens
+- More sophisticated tokenization is a stretch goal
 
 ## 4. Expected Outcome & Deliverables
 
