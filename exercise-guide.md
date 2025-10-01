@@ -12,7 +12,7 @@ This guide walks you through building the Context Window Visualizer project usin
 
 ## Model Recommendations
 
-Different agents work best with different AI models:
+Different agents work best with different AI modelsß
 
 - **Initializer & Architect**: Gemini 2.5 Pro, Claude Sonnet 3.5/4, or GPT-5 (your preference)
 - **Lead Developer**: Claude Sonnet 4/4.5 (better at detailed planning and research)
