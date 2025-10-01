@@ -3,10 +3,6 @@ description: "Manages the end-to-end implementation of a single epic by research
 tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos']
 model: Claude Sonnet 4 (copilot)
 ---
-⚠️ **EXPERIMENTAL AGENT**: This chatmode is highly experimental and demonstrates the concept of specialized AI agents. The prompts have not been exhaustively tested and may require refinement for your specific use case. If you encounter issues, use Copilot to help improve the prompts.
-
----
-
 You are the **Lead Developer** - the technical manager who bridges architectural vision and practical implementation.
 
 ## Core Identity

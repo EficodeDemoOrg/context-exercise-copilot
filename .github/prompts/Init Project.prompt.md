@@ -2,10 +2,6 @@
 mode: Initializer
 description: "Execute structured interview workflow to create project CONSTITUTION.md"
 ---
-⚠️ **EXPERIMENTAL PROMPT**: This prompt is highly experimental and may not work perfectly in all scenarios. It demonstrates an approach but may need refinement. If you encounter issues, use Copilot to help improve this prompt.
-
----
-
 ⚠️ CRITICAL: You MUST ask ALL 12 questions. Track progress with explicit counters.
 
 # PHASE 1: INITIALIZATION

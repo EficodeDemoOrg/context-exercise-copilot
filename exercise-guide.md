@@ -26,7 +26,7 @@ Different agents work best with different AI modelsß
 1. Check the chatmode selector shows the correct agent
 2. Check the model selector shows your preferred model for that agent
 3. Manually switch back if needed
-
+ß
 This is current VS Code behavior and easy to miss!ide: Building the Context Window Visualizer
 
 ## Introduction
