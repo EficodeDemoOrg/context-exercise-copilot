@@ -4,16 +4,38 @@ description: "Execute structured interview workflow to create project CONSTITUTI
 ---
 ⚠️ CRITICAL: You MUST ask ALL 12 questions. Track progress with explicit counters.
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track progress through all 12 questions. Update the todo list after each answer received.
+
 # PHASE 1: INITIALIZATION
 1. Read `README.md` completely
-2. Create `/tmp/INITIALIZER_LOG.md`:
+2. Create your TODO list using #todo:
+   ```
+   #todo
+   - [ ] Read README.md
+   - [ ] Create INITIALIZER_LOG.md
+   - [ ] Ask Question 1 of 12
+   - [ ] Ask Question 2 of 12
+   - [ ] Ask Question 3 of 12
+   - [ ] Ask Question 4 of 12
+   - [ ] Ask Question 5 of 12
+   - [ ] Ask Question 6 of 12
+   - [ ] Ask Question 7 of 12
+   - [ ] Ask Question 8 of 12
+   - [ ] Ask Question 9 of 12
+   - [ ] Ask Question 10 of 12
+   - [ ] Ask Question 11 of 12
+   - [ ] Ask Question 12 of 12
+   - [ ] Present summary for approval
+   - [ ] Generate CONSTITUTION.md
+   ```
+3. Create `/tmp/INITIALIZER_LOG.md`:
    ```
    # Initializer Session - [timestamp]
    ## Questions Completed: 0/12
    ## README Analysis
    [Your summary]
    ```
-3. Greet user:
+4. Greet user:
    > "I've analyzed your README. I need to ask you **exactly 12 questions** to create your project constitution. Let's begin."
 
 # PHASE 2: MANDATORY INTERVIEW [12 QUESTIONS REQUIRED]

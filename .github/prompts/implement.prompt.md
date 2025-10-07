@@ -7,6 +7,8 @@ Execute the implementation task provided by the user.
 
 ⚠️ **REQUIRED**: User must attach a task file from `docs/epic_<name>/tasks/`
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool throughout the entire implementation process. Create the todo list in Phase 1 Step 3, and update it after completing each step.
+
 # PHASE 1: COMPREHENSION & PLANNING
 
 ## Step 1: Read Task
@@ -21,9 +23,9 @@ Identify from the task:
 - Definition of Done items
 
 ## Step 3: Create TODO List
-Use #todos tool to create implementation checklist:
+**MANDATORY**: Use #todo tool to create implementation checklist:
 ```
-#todos
+#todo
 - [ ] Read and understand task requirements
 - [ ] Create: [file path]
 - [ ] Modify: [file path]
@@ -32,6 +34,8 @@ Use #todos tool to create implementation checklist:
 - [ ] Verify DoD criteria
 - [ ] Generate completion report
 ```
+
+**Note**: Update this todo list as you complete each step. Mark items complete immediately after finishing them.
 
 ## Step 4: Request Approval
 Present to user:
@@ -64,7 +68,7 @@ Wait for user confirmation before proceeding.
 For each step in the task file:
 1. Perform the exact operation specified
 2. Use provided code snippets verbatim
-3. Update TODO list: check off completed items
+3. **MANDATORY**: Update TODO list using #todo after completing each item
 
 ## Step 2: Handle Deviations
 If you cannot follow an instruction exactly:
@@ -122,10 +126,13 @@ For each DoD item in task:
 # PHASE 4: COMPLETION
 
 ## Step 1: Final TODO Review
+**MANDATORY**: Verify all todo items are complete:
 ```
-#todos
+#todo
 ✅ All items should be checked
 ```
+
+If any items remain unchecked, explain why and whether they can be completed.
 
 ## Step 2: Generate Summary
 ```

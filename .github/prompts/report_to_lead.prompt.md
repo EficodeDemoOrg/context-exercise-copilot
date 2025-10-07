@@ -6,6 +6,19 @@ Generate a comprehensive completion report for the task just executed.
 
 ⚠️ **REQUIRED CONTEXT**: Completed task file must be in context
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track the reporting process.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Determine completion status
+- [ ] Summarize implementation
+- [ ] Document changes made
+- [ ] List verification results
+- [ ] Generate task completion report
+- [ ] Present report to user
+```
+
 # WORKFLOW
 
 ## Step 1: Determine Status

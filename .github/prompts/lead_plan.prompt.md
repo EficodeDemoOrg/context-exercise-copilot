@@ -8,6 +8,18 @@ Transform research into executable tasks optimized for limited context windows.
 - The epic's ADR file
 - `docs/epic_<epic_name>/research/RESEARCH.md` (from research phase)
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track progress through the planning workflow. Update the todo list as you complete each phase.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Phase 1: Create IMPLEMENTATION_PLAN.md with task decomposition
+- [ ] Phase 2: Create DECISION_LOG.md documenting choices
+- [ ] Phase 3: Generate individual task files (Task 01, 02, 03...)
+- [ ] Phase 4: Create MANIFEST.md with execution instructions
+- [ ] Verify all files created successfully
+```
+
 # PHASE 1: PLANNING
 
 **MANDATORY OUTPUT FILE**: `docs/epic_<epic_name>/plans/IMPLEMENTATION_PLAN.md`

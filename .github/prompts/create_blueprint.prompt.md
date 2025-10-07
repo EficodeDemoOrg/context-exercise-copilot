@@ -5,6 +5,23 @@ tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'usa
 ---
 Create the foundational architecture for this project following this exact workflow:
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track progress through all 4 phases. Update the todo list as you complete each step.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Phase 1: Read and analyze CONSTITUTION.md
+- [ ] Phase 1: Extract technology constraints
+- [ ] Phase 1: Identify conflicts/ambiguities
+- [ ] Phase 2: Design component architecture
+- [ ] Phase 2: Design state architecture
+- [ ] Phase 2: Design data flow
+- [ ] Phase 3: Structure 5 development epics
+- [ ] Phase 4: Generate docs/ROADMAP.md
+- [ ] Phase 4: Generate docs/ADR/INITIAL_ARCHITECTURE_ADR.md
+- [ ] Verify all files created successfully
+```
+
 # PHASE 1: CONSTITUTION ANALYSIS
 1. Read `CONSTITUTION.md` completely
 2. Extract and list:

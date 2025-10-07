@@ -6,6 +6,18 @@ Generate a structured escalation request for the current implementation blocker.
 
 ⚠️ **REQUIRED CONTEXT**: Current task file must be in context
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track the escalation process.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Classify the issue type
+- [ ] Document the context
+- [ ] Provide attempted solutions
+- [ ] Generate escalation request
+- [ ] Present to user for review
+```
+
 # WORKFLOW
 
 ## Step 1: Classify the Issue

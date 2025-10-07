@@ -10,6 +10,24 @@ Execute this research workflow to eliminate all unknowns before planning.
 - The specific epic's ADR file
 - Any relevant existing code files
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track progress through the research workflow. Update the todo list as you complete each category.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Phase 1: Identify epic name from ADR
+- [ ] Phase 1: Create directory structure
+- [ ] Phase 2: Research codebase patterns
+- [ ] Phase 2: Research dependencies
+- [ ] Phase 2: Research integration points
+- [ ] Phase 2: Research state management
+- [ ] Phase 2: Research testing approach
+- [ ] Phase 2: Research error handling
+- [ ] Phase 3: Identify implementation risks
+- [ ] Phase 4: Generate RESEARCH.md
+- [ ] Verify research document complete
+```
+
 # PHASE 1: CONTEXT ANALYSIS
 
 1. Identify the epic name from the provided ADR

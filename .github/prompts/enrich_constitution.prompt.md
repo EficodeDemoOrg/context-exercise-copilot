@@ -6,6 +6,18 @@ Transform the minimal CONSTITUTION.md into a comprehensive project charter with 
 
 ⚠️ **REQUIRED CONTEXT**: User must attach existing `CONSTITUTION.md`
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track the enrichment process through all phases.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Phase 1: Analyze existing CONSTITUTION.md
+- [ ] Phase 2: Generate comprehensive enhancements (10 sections)
+- [ ] Phase 3: Present proposal to user
+- [ ] Phase 4: Integrate approved changes
+- [ ] Verify enhanced CONSTITUTION.md is complete
+```
+
 # PHASE 1: ANALYZE EXISTING CONSTITUTION
 
 Read the current CONSTITUTION.md and extract:

@@ -7,6 +7,19 @@ Execute the **THREAD DUMP PROTOCOL** to preserve critical context for continuati
 
 ⚠️ **CRITICAL**: You are about to generate a handoff briefing. Follow this template EXACTLY.
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track the thread dump process.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Acknowledge thread dump initiation
+- [ ] Generate context handoff briefing
+- [ ] Document current task state
+- [ ] List work completed
+- [ ] Specify next steps
+- [ ] Provide continuation instructions
+```
+
 # EXECUTION PROTOCOL
 
 ## Step 1: Acknowledge the Situation

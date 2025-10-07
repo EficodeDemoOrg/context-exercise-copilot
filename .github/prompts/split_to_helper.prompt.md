@@ -7,6 +7,18 @@ Create a self-contained sub-task when current implementation is too complex for 
 
 ⚠️ **USE ONLY WHEN**: Task requires unrelated operations that would pollute context
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track the delegation process.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Identify work that needs delegation
+- [ ] Define sub-task scope
+- [ ] Create helper task file
+- [ ] Prepare context requirements
+- [ ] Generate delegation request
+```
+
 # WORKFLOW
 
 ## Step 1: Identify Splittable Work

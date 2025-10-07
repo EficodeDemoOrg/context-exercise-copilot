@@ -9,6 +9,18 @@ Generate completion report after all implementation tasks are done.
 - `docs/epic_<epic_name>/plans/IMPLEMENTATION_PLAN.md`
 - `docs/epic_<epic_name>/MANIFEST.md`
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track the report generation process.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Read all required context files
+- [ ] Extract deliverables and metrics
+- [ ] Verify ADR requirements met
+- [ ] Generate COMPLETION_REPORT.md
+- [ ] Present report to user
+```
+
 # OUTPUT GENERATION
 
 **MANDATORY OUTPUT FILE**: `docs/epic_<epic_name>/COMPLETION_REPORT.md`

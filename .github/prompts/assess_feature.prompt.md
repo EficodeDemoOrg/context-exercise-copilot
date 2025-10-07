@@ -4,6 +4,24 @@ description: "Assess new feature impact on existing architecture and update road
 ---
 Execute this feature assessment workflow precisely:
 
+⚠️ **MANDATORY TOOL**: You MUST use the #todo tool to track progress through the assessment workflow. Update the todo list as you complete each phase.
+
+**Before starting, create your TODO list:**
+```
+#todo
+- [ ] Phase 1: Read CONSTITUTION.md
+- [ ] Phase 1: Read INITIAL_ARCHITECTURE_ADR.md
+- [ ] Phase 1: Read ROADMAP.md
+- [ ] Phase 1: Read all other ADRs
+- [ ] Phase 2: Request feature details from user
+- [ ] Phase 3: Analyze architectural impact
+- [ ] Phase 3: Identify required changes
+- [ ] Phase 4: Determine epic placement
+- [ ] Phase 5: Generate new ADR
+- [ ] Phase 5: Update ROADMAP.md
+- [ ] Verify all changes complete
+```
+
 # PHASE 1: CONTEXT GATHERING
 
 1. Read these files in order:
