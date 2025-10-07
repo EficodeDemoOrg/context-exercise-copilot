@@ -236,12 +236,108 @@ The Implementer generates a completion report with:
    - The completion report from Step 9
 4. Ask the Architect to update the ROADMAP marking Epic 1 as complete
 
+## Troubleshooting: When a Prompt Fails to Perform
+
+Sometimes an agent won't follow its prompt correctly—it skips questions, ignores instructions, or produces incomplete output. When this happens, don't just retry. Instead, use this systematic approach to fix the prompt itself:
+
+### The Prompt Debugging Workflow
+
+**Step 1: Stop and Document**
+- Don't continue with the broken session
+- Note exactly what went wrong:
+  - What the prompt should have done
+  - What the agent actually did
+  - Which steps were skipped or incorrect
+
+**Step 2: Start a Fresh Debugging Session**
+1. Open a **new chat session**
+2. Select **Ask** mode (not the agent that failed)
+3. **Choose a high-powered model:**
+   - **Recommended:** Claude Sonnet 4 or 4.5 (excellent at analysis)
+   - **Alternative:** GPT-4o, Gemini 2.0 Flash, or best available
+4. Attach the problematic prompt file (e.g., `.github/prompts/Init Project.prompt.md`)
+
+**Step 3: Explain the Problem**
+Tell the model:
+```
+This prompt isn't working as expected.
+
+What I expected: [describe the correct behavior]
+
+What actually happened: [describe what went wrong]
+
+The prompt file is attached. Please analyze it and ask me clarifying 
+questions about what needs to be fixed.
+```
+
+**Step 4: Collaborate on the Fix**
+- Answer the model's clarifying questions
+- Discuss what instructions are unclear or missing
+- Review the model's proposed improvements
+- Iterate until you have a clear fix
+
+**Step 5: Generate the Updated Prompt**
+Once you've agreed on the changes:
+1. **Switch to Opus 4.1** if available (superior for precise generation)
+2. Or stay with Claude Sonnet 4/4.5 if Opus isn't available
+3. Ask it to generate the complete updated prompt
+4. Review carefully—ensure all changes are incorporated
+5. Update the prompt file
+
+**Step 6: Test the Fixed Prompt**
+1. Start a **new session** with the appropriate agent mode
+2. Run the updated prompt
+3. Verify it now behaves correctly
+4. If issues remain, repeat from Step 2
+
+### Example: Fixing the Initializer
+
+**Problem:** The Initializer skipped questions 7-9 in the interview.
+
+**Debug Session (Claude Sonnet 4):**
+```
+This /init_project prompt isn't working. It should ask all 12 questions
+sequentially, but it jumped from question 6 to question 10, skipping 
+questions 7, 8, and 9 entirely.
+
+The prompt is attached. What might be causing this and how can we fix it?
+```
+
+The model analyzes and asks:
+- "Are the questions in distinct sections that might confuse it?"
+- "Does the prompt have explicit counters and checkpoints?"
+- "Is there ambiguity in the progression logic?"
+
+After discussion, you identify the issue and agree on improvements.
+
+**Generation Phase (Switch to Opus 4.1 if available):**
+```
+Based on our analysis, please generate the updated prompt with:
+1. Explicit progress counters after each question
+2. Mandatory checkpoint validations between sections
+3. Clearer instructions about sequential execution
+```
+
+Review the output, update the file, and test again.
+
+### Model Recommendations for Troubleshooting
+
+**Analysis Phase (Step 2-4):**
+- **Best:** Claude Sonnet 4 or 4.5 (excellent reasoning and clarifying questions)
+- **Alternative:** GPT-4o, Gemini 2.0 Flash (if Claude unavailable)
+
+**Generation Phase (Step 5):**
+- **Best:** Claude Opus 4.1 (superior precision and completeness)
+- **Fallback:** Claude Sonnet 4/4.5 (still very good)
+- **Note:** Use what's available to you—Sonnet 4/4.5 can handle both phases
+
 ## What To Do If...
 
 ### The agent skips steps or questions
-- Explicitly tell it what it missed
+- Use the **Prompt Debugging Workflow** above to fix the prompt
+- Explicitly tell it what it missed as a temporary workaround
 - Reference the specific requirement from the prompt
-- If it persists, tweak the prompt using Copilot's help
+- Don't rely on verbal corrections—fix the prompt file itself
 
 ### An epic seems too large
 - Go back to Architect mode
